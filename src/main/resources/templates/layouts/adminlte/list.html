@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <div th:replace="~{adminlte/adminlte.html :: head}">
+        <title id="headtitle">Listado Facturas</title>
+    </div>
+    <div th:replace="~{adminlte/adminlte.html :: styles}"> </div>
+
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <div th:replace="~{adminlte/adminlte.html :: preloader}"> </div>
+        <div th:replace="~{adminlte/adminlte.html :: main-header}"> </div>
+        <div th:replace="~{adminlte/adminlte.html :: main-sidebar}"> </div>
+        <div class="content-wrapper">
+            <div th:replace="~{adminlte/adminlte.html :: content-header}"> </div>
+
+            <!-- Main content -->
+            <section th:replace="~{adminlte/adminlte.html :: content-content}">
+                <div id="content">
+                   <!-- agregar el contenido que se quiera mostar -->  
+
+                 
+                </div>
+            </section>
+
+            <!-- /.container-fluid -->
+
+        </div>
+        <div th:replace="~{adminlte/adminlte.html :: main-footer}"> </div>
+        <div th:replace="~{adminlte/adminlte.html :: control-sidebar}"> </div>
+    </div>
+    <!-- ./wrapper -->
+
+    <div th:replace="~{adminlte/adminlte.html :: scripts}"> </div>
+
+</body>
+
+</html>

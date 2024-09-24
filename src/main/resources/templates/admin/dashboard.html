@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+  <div th:replace="~{layouts/adminlte/layout.html :: head}">
+    <title id="headtitle">Dashboard</title>
+  </div>
+  <div th:replace="~{layouts/adminlte/layout.html :: styles}"> </div>
+
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+    <div th:replace="~{layouts/adminlte/layout.html :: preloader}"> </div>
+    <div th:replace="~{layouts/adminlte/layout.html :: main-header}"> </div>
+    <div th:replace="~{layouts/adminlte/layout.html :: main-sidebar}"> </div>
+    <div class="content-wrapper">
+      <div th:replace="~{layouts/adminlte/layout.html :: content-header}"> </div>
+
+      <!-- Main content -->
+      <section th:replace="~{layouts/adminlte/layout.html :: content-content}">
+        <div id="content">
+
+            <h2>Estadísticas del sistema</h2>
+            <!-- Aquí podrías agregar resúmenes de datos o gráficas -->
+            <p>Usuarios registrados: <span th:text="${totalUsuarios}">0</span></p>
+            <p>Roles creados: <span th:text="${totalRoles}">0</span></p>
+            <p>Permisos disponibles: <span th:text="${totalPermisos}">0</span></p>
+            <p>Rutas protegidas: <span th:text="${totalRutas}">0</span></p>
+
+          <!-- /.row (main row) -->
+        </div>
+      </section>
+
+      <!-- /.container-fluid -->
+
+    </div>
+    <div th:replace="~{layouts/adminlte/layout.html :: main-footer}"> </div>
+    <div th:replace="~{layouts/adminlte/layout.html :: control-sidebar}"> </div>
+  </div>
+  <!-- ./wrapper -->
+
+  <div th:replace="~{layouts/adminlte/layout.html :: scripts}">
+
+
+  </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: administration
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/tramites # cambiar tramites por la suya
+    username: root
+    password: ""
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  devtools:
+    restart:
+      enabled: true
+    add-properties: true
+
+server:
+  port: 8787
+##debug: true
+
+# logging:
+#    level:   
+#      org:
+#       springframework:
+#             security: DEBUG
+#       thymeleaf: TRACE
+#       thymeleaf.spring5.view.ThymeleafView: DEBUG

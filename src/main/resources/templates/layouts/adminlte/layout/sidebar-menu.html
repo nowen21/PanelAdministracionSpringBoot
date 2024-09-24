@@ -1,0 +1,102 @@
+<nav class="mt-2" th:fragment="sidebar-menu">
+    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class
+         with font-awesome or any other icon font library -->
+        <li class="nav-item">
+            <a href="#" class="nav-link ">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                    Administración
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Usuarios
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item">
+                            <a th:href="@{'/permisos'}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Permisos</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{'/roles'}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Roles</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{'/usuarios'}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Usuarios</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Inventario
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item">
+                            <a th:href="@{'/clientes'}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Clientes</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{'/categorias'}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Categorías</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{'/productos'}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Productos</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{'/proveedores'}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Proveedores</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{'/compras'}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Compras</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{'/ventas'}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Ventas</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{'/gastos'}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Gastos</p>       
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+               
+            </ul>
+        </li>
+    </ul>
+</nav>

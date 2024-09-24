@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a th:href="@{/administration/admin/usuarios}">Usuarios</a></li>
+                <li><a th:href="@{/administration/admin/roles}">Roles</a></li>
+                <li><a th:href="@{/administration/admin/permisos}">Permisos</a></li>
+                <li><a th:href="@{/logout}">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div th:replace="fragments/messages :: messages"></div>
+        <section th:fragment="content">
+            <h2>Contenido</h2>
+        </section>
+    </main>
+</body>
+</html>

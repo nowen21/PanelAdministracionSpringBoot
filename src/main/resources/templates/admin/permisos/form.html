@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <div th:replace="~{layouts/adminlte/layout.html :: head}">
+        <title id="headtitle">Crear Permiso</title>
+    </div>
+    <div th:replace="~{layouts/adminlte/layout.html :: styles}"> </div>
+
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <div th:replace="~{layouts/adminlte/layout.html :: preloader}"> </div>
+        <div th:replace="~{layouts/adminlte/layout.html :: main-header}"> </div>
+        <div th:replace="~{layouts/adminlte/layout.html :: main-sidebar}"> </div>
+        <div class="content-wrapper">
+            <div th:replace="~{layouts/adminlte/layout.html :: content-header}"> </div>
+
+            <!-- Main content -->
+            <section th:replace="~{layouts/adminlte/layout.html :: content-content}">
+                <div id="content">
+                    <div class="card">
+                        <div class="card-header">
+                            <h1 th:text="${#strings.isEmpty(permiso.id) ? 'Crear Permiso' : 'Editar Permiso'}"></h1>
+                        </div>
+                        <form th:action="@{/administration/admin/permisos/guardar}" th:object="${permiso}" method="post">
+                            <div class="card-body">
+
+                                <div class="form-group">
+                                    <label for="nombre">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" th:field="*{nombre}"
+                                        placeholder="Nombre del permiso" required />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="codename">Codename</label>
+                                    <input type="text" class="form-control" id="codename" th:field="*{codename}"
+                                        placeholder="Código del permiso (ej. VIEW_USER)" required />
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary" type="submit">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.row (main row) -->
+                </div>
+            </section>
+
+            <!-- /.container-fluid -->
+
+        </div>
+        <div th:replace="~{layouts/adminlte/layout.html :: main-footer}"> </div>
+        <div th:replace="~{layouts/adminlte/layout.html :: control-sidebar}"> </div>
+    </div>
+    <!-- ./wrapper -->
+
+    <div th:replace="~{layouts/adminlte/layout.html :: scripts}">
+
+
+    </div>
+
+
+</body>
+
+</html>

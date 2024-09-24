@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layouts/adminlte/layout :: content">
+<head>
+    <title th:text="${#strings.isEmpty(ruta.id) ? 'Crear Ruta' : 'Editar Ruta'}"></title>
+</head>
+<body>
+    <h1 th:text="${#strings.isEmpty(ruta.id) ? 'Crear Ruta' : 'Editar Ruta'}"></h1>
+
+    <form th:action="@{/administration/admin/rutas/crear}" th:object="${ruta}" method="post">
+        <div>
+            <label for="url">URL</label>
+            <input type="text" id="url" th:field="*{url}" placeholder="URL protegida" required />
+        </div>
+
+        <div>
+            <label for="permiso">Permiso Asociado</label>
+            <select id="permiso" th:field="*{permiso}" required>
+                <option th:each="permiso : ${permisos}" th:value="${permiso}" th:text="${permiso.nombre}"></option>
+            </select>
+        </div>
+
+        <div>
+            <button type="submit">Guardar</button>
+        </div>
+    </form>
+</body>
+</html>

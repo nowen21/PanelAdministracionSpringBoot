@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layouts/adminlte/layout :: content">
+<head>
+    <title>Lista de Rutas Protegidas</title>
+</head>
+<body>
+    <h1>Rutas Protegidas</h1>
+    <a th:href="@{/administration/admin/rutas/crear}">Crear nueva ruta</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>URL</th>
+                <th>Permiso Asociado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="ruta : ${rutas}">
+                <td th:text="${ruta.id}"></td>
+                <td th:text="${ruta.url}"></td>
+                <td th:text="${ruta.permiso.nombre}"></td>
+                <td>
+                    <a th:href="@{/administration/admin/rutas/editar/{id}(id=${ruta.id})}">Editar</a>
+                    <a th:href="@{/administration/admin/rutas/eliminar/{id}(id=${ruta.id})}" onclick="return confirm('¿Estás seguro de eliminar esta ruta?');">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

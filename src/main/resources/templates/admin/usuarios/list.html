@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <div th:replace="~{layouts/adminlte/layout.html :: head}">
+        <title id="headtitle">Listado Usuarios</title>
+    </div>
+    <div th:replace="~{layouts/adminlte/layout.html :: styles}"> </div>
+
+    <div th:replace="~{layouts/adminlte/layout/styles_datatables.html :: styles_datatables}"> </div>
+
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <div th:replace="~{layouts/adminlte/layout.html :: preloader}"> </div>
+        <div th:replace="~{layouts/adminlte/layout.html :: main-header}"> </div>
+        <div th:replace="~{layouts/adminlte/layout.html :: main-sidebar}"> </div>
+        <div class="content-wrapper">
+            <div th:replace="~{layouts/adminlte/layout.html :: content-header}"> </div>
+
+            <!-- Main content -->
+            <section th:replace="~{layouts/adminlte/layout.html :: content-content}">
+                <div id="content">
+                    <!-- Mostrar el mensaje de éxito o error -->
+      
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Listado Usuarios</h3>
+                           
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="card-header">
+                                <a class="btn btn-primary" th:href="@{/administration/admin/usuarios/crear}">Nuevo Usuario</a>
+                            </div>
+
+                            <table id="permisos" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        
+                                        <th>Acciones</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="usuario : ${usuarios}">
+                                        <td th:text="${usuario.id}"></td>
+                                        <td th:text="${usuario.pnombre}"></td>
+                                        <td th:text="${usuario.snombre}"></td>
+                                        <td th:text="${usuario.papellido}"></td>
+                                        <td th:text="${usuario.sapellido}"></td>
+                                        <td th:text="${usuario.email}"></td>
+
+                                        <td>
+                                            <a class="btn btn-outline-warning btn-sm"
+                                                th:href="@{/administration/admin/usuarios/editar/{id}(id=${usuario.id})}">
+                                                <i class="fas fa-edit "></i>
+                                            </a>
+                                            <a th:if="${usuario.id != 1}" class="btn btn-outline-danger btn-sm"
+                                                th:href="@{/administration/admin/usuarios/eliminar/{id}(id=${usuario.id})}">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                            <a th:if="${usuario.id != 1}" class="btn btn-outline-success btn-sm"
+                                                th:href="@{/administration/admin/usuarios/roles/{id}(id=${usuario.id})}">
+                                                <i class="fas fa-eye"></i>Roles
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>                                        
+                                        <th>Acciones</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.row (main row) -->
+                </div>
+            </section>
+
+            <!-- /.container-fluid -->
+
+        </div>
+        <div th:replace="~{layouts/adminlte/layout.html :: main-footer}"> </div>
+        <div th:replace="~{layouts/adminlte/layout.html :: control-sidebar}"> </div>
+    </div>
+    <!-- ./wrapper -->
+
+    <div th:replace="~{layouts/adminlte/layout.html :: scripts}"></div>
+    <div th:replace="~{layouts/adminlte/layout/scripts-datatable.html :: scripts-datatable}"> </div>
+
+
+    <script>
+        $(function () {
+            $("#permisos").DataTable({
+                "responsive": true, "lengthChange": false, "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#permisos_wrapper .col-md-6:eq(0)');
+            
+        });
+    </script>
+
+</body>
+
+</html>

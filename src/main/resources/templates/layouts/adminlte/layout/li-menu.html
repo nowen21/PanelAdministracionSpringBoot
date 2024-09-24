@@ -1,0 +1,16 @@
+<li th:fragment="li-menu(link, text,currentPage, textPage,ayuda)"
+    class="nav-item d-none d-sm-inline-block dropdown mr-3">
+    <div class="row">
+        <div class="col-sm-6">
+            <a th:href="@{${link}}" class="nav-link" th:classappend="${currentPage == textPage} ? 'active'">
+                <span th:text="${text}"></span>
+            </a>
+        </div>
+        <div class="col-sm-6">
+            <a class="nav-link ml-2" href="#" data-bs-toggle="tooltip" data-bs-placement="top" th:title="${ayuda}">
+                <i class="far fa-question-circle red-icon"></i>
+            </a>
+           
+        </div>
+    </div>
+</li>

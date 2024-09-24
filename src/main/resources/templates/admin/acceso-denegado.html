@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <div th:replace="~{layouts/adminlte/layout.html :: head}">
+        <title id="headtitle">Acceso denegado</title>
+    </div>
+    <div th:replace="~{layouts/adminlte/layout.html :: styles}"> </div>
+
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <div th:replace="~{layouts/adminlte/layout.html :: preloader}"> </div>
+        <div th:replace="~{layouts/adminlte/layout.html :: main-header}"> </div>
+        <div th:replace="~{layouts/adminlte/layout.html :: main-sidebar}"> </div>
+        <div class="content-wrapper">
+            <div th:replace="~{layouts/adminlte/layout.html :: content-header}"> </div>
+
+            <!-- Main content -->
+            <section th:replace="~{layouts/adminlte/layout.html :: content-content}">
+                <div id="content">
+                    <div class="card">
+                        <div class="card-header">
+                            <h1>No tiene acceso a esta página</h1>
+                        </div>
+                      
+                            <div class="card-body">
+
+
+                                <p>Contacte con el administrador si cree que esto es un error.</p>
+                                <a href="/">Volver al inicio</a>
+
+                            </div>
+
+                    </div>
+                    <!-- /.row (main row) -->
+                </div>
+            </section>
+
+            <!-- /.container-fluid -->
+
+        </div>
+        <div th:replace="~{layouts/adminlte/layout.html :: main-footer}"> </div>
+        <div th:replace="~{layouts/adminlte/layout.html :: control-sidebar}"> </div>
+    </div>
+    <!-- ./wrapper -->
+
+    <div th:replace="~{layouts/adminlte/layout.html :: scripts}">
+
+
+    </div>
+
+
+</body>
+
+</html>

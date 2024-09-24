@@ -1,0 +1,32 @@
+<!-- Left navbar links -->
+<ul class="navbar-nav" th:fragment="navbar-nav">
+    <style>
+        .red-icon {
+            color: red;
+        }
+    </style>
+    <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+        <a th:href="@{'/'}" class="nav-link" th:classappend="${currentPage == 'inicio'} ? 'active'">Inicio</a>
+    </li>
+
+    <li
+        th:replace="~{layouts/adminlte/layout/li-menu :: li-menu(link=@{/administration/admin},
+text='Administración',currentPage= ${currentPage},textPage='admin',ayuda='Administración')}">
+    </li>
+    <li th:replace="~{layouts/adminlte/layout/li-menu :: li-menu(link=@{/administration/admin/roles},
+    text='Roles',currentPage= ${currentPage},textPage='roles',ayuda='Roles')}">
+</li>
+    <li
+        th:replace="~{layouts/adminlte/layout/li-menu :: li-menu(link=@{/administration/admin/permisos},
+    text='Permisos',currentPage= ${currentPage},textPage='permisos',ayuda='Permisos')}">
+    </li>
+  
+
+    <li th:replace="~{layouts/adminlte/layout/li-menu :: li-menu(link=@{/administration/admin/usuarios},
+        text='Usuarios',currentPage= ${currentPage},textPage='usuarios',ayuda='Usuarios')}">
+    </li>
+
+</ul>

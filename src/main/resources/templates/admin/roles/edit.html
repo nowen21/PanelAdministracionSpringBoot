@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <div th:replace="~{layouts/adminlte/layout.html :: head}">
+        <title id="headtitle">Editar Rol</title>
+    </div>
+    <div th:replace="~{layouts/adminlte/layout.html :: styles}"> </div>
+
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <div th:replace="~{layouts/adminlte/layout.html :: preloader}"> </div>
+        <div th:replace="~{layouts/adminlte/layout.html :: main-header}"> </div>
+        <div th:replace="~{layouts/adminlte/layout.html :: main-sidebar}"> </div>
+        <div class="content-wrapper">
+            <div th:replace="~{layouts/adminlte/layout.html :: content-header}"> </div>
+
+            <!-- Main content -->
+            <section th:replace="~{layouts/adminlte/layout.html :: content-content}">
+                <div id="content">
+                    <div class="card">
+                        <div class="card-header">
+                            <h1>Editar Rol</h1>
+                        </div>
+                        <form th:action="@{/administration/admin/roles/actualizar/{id}(id=${role.id})}"
+                            th:object="${role}" method="post">
+                            <div class="card-body">
+                                <!-- Campo oculto para el ID del permiso -->
+                                <input type="hidden" th:field="*{id}" />
+                                <div class="form-group">
+                                    <label for="nombre">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" th:field="*{nombre}"
+                                        placeholder="Nombre del rol" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="descripcion">Descripcion</label>
+                                    <input type="text" class="form-control" id="descripcion" th:field="*{descripcion}"
+                                        placeholder="Descripcion del rol" required />
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary" type="submit">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.row (main row) -->
+                </div>
+            </section>
+
+            <!-- /.container-fluid -->
+
+        </div>
+        <div th:replace="~{layouts/adminlte/layout.html :: main-footer}"> </div>
+        <div th:replace="~{layouts/adminlte/layout.html :: control-sidebar}"> </div>
+    </div>
+    <!-- ./wrapper -->
+
+    <div th:replace="~{layouts/adminlte/layout.html :: scripts}">
+
+
+    </div>
+
+
+</body>
+
+</html>
