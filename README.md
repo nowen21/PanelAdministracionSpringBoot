@@ -26,7 +26,39 @@ Sigue estos pasos para configurar y ejecutar la aplicación en tu entorno local:
 
    ```bash
    git clone https://github.com/nowen21/administracion.git
+2. Accede al directorio del proyecto:
+    ```bash
+    cd administracion
+3. Configura las propiedades de la base de datos en el archivo application.yml ubicado en src/main/resources/
+   ```bash
+   spring:
+     application:
+       name: administration
+     jpa:
+       hibernate:
+         ddl-auto: update
+     datasource:
+       url: jdbc:mysql://localhost:3306/tu_base_de_datos # Cambia 'tu_base_de_datos' por el nombre de tu base de datos
+       username: root
+       password: ""
+       driver-class-name: com.mysql.cj.jdbc.Driver
+     devtools:
+       restart:
+         enabled: true
+       add-properties: true
+   
+   server:
+     port: 8787
 
+4. Compila y ejecuta la aplicación usando Maven:
+   ```bash
+   mvn clean install
+   mvn spring-boot:run
+5. Accede a la aplicación en tu navegador web en la URL:
+   ```bash
+   http://localhost:8787
+
+   
 ## Uso
 
 ### Inicio de sesión
