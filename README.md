@@ -25,7 +25,7 @@ Sigue estos pasos para configurar y ejecutar la aplicación en tu entorno local:
 1. Clona el repositorio:
 
    ```bash
-   git clone https://github.com/tu-usuario/PanelAdministracionSpringBoot.git
+   git clone https://github.com/nowen21/administracion.git
 
 ## Uso
 
